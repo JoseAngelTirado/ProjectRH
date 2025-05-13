@@ -26,9 +26,11 @@ public class ExpedienteService {
     public void deleteExpediente(Long id){
         expedienteRepo.deleteById(id);
     }
+
     public Expediente saveExpediente(Expediente expediente){
         return expedienteRepo.save(expediente);
     }
+
     public Expediente updateExpediente(Expediente expediente){
         return expedienteRepo.save(expediente);
     }

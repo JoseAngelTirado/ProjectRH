@@ -1,12 +1,12 @@
 package com.rh.project.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.web.bind.annotation.*;
 
 import com.rh.project.model.Empresa;
 import com.rh.project.service.EmpresaService;
-
-
 
 @RestController
 @RequestMapping("/empresas")
@@ -14,33 +14,39 @@ public class EmpresaController {
 
     private final EmpresaService empresaService;
 
-    public EmpresaController(EmpresaService empresaService){
+    public EmpresaController(EmpresaService empresaService) {
         this.empresaService = empresaService;
     }
-    
+
+    // Listar todas las empresas
     @GetMapping
-    public List<Empresa> listarEmpresa(){
+    public List<Empresa> listarEmpresas() {
         return empresaService.listEmpresas();
     }
 
+    // Obtener una empresa por su ID
     @GetMapping("/{id}")
-    public Empresa getEmpresaById(@PathVariable Long id){
-        return empresaService.getEmpresaById(id).orElse(null);
+    public Empresa obtenerEmpresaPorId(@PathVariable Long id) {
+        Optional<Empresa> empresa = empresaService.getEmpresaById(id);
+        return empresa.orElse(null);
     }
 
+    // Crear una nueva empresa
     @PostMapping
-    public Empresa crearEmpresa(@RequestBody Long id){
-        return empresaService.getEmpresaById(id).orElse(null);
+    public Empresa crearEmpresa(@RequestBody Empresa empresa) {
+        return empresaService.saveEmpresa(empresa);
     }
 
-    @PostMapping("/{id}")
-    public Empresa actualizarEmpresa(@PathVariable Long id, @RequestBody Empresa empresa){
+    // Actualizar una empresa existente
+    @PutMapping("/{id}")
+    public Empresa actualizarEmpresa(@PathVariable Long id, @RequestBody Empresa empresa) {
         empresa.setId_empresa(id);
         return empresaService.updateEmpresa(empresa);
     }
 
+    // Eliminar una empresa por su ID
     @DeleteMapping("/{id}")
-    public void eliminarEmpresa(@PathVariable Long id){
+    public void eliminarEmpresa(@PathVariable Long id) {
         empresaService.deleteEmpresa(id);
     }
 }
