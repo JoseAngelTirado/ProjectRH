@@ -1,6 +1,9 @@
 package com.rh.project.controller;
 
 import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.rh.project.model.Trabajador;
@@ -34,11 +37,25 @@ public class TrabajadorController {
         return trabajadorService.saveTrabajador(trabajador);
     }
 
-    // Actualizar un trabajador existente
+    // Actualizar un trabajador existente (completo)
     @PutMapping("/{id}")
     public Trabajador actualizarTrabajador(@PathVariable Long id, @RequestBody Trabajador trabajador){
         trabajador.setId_trabajador(id);
         return trabajadorService.updateTrabajador(trabajador);
+    }
+
+    // Actualizar parcialmente un trabajador (solo campos específicos)
+    @PatchMapping("/{id}")
+    public ResponseEntity<Trabajador> actualizarTrabajadorParcial(
+            @PathVariable Long id,
+            @RequestBody Map<String, Object> camposActualizados) {
+
+        Trabajador trabajadorActualizado = trabajadorService.updateTrabajadorParcial(id, camposActualizados);
+        if (trabajadorActualizado != null) {
+            return ResponseEntity.ok(trabajadorActualizado);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     // Eliminar un trabajador por ID
@@ -47,4 +64,3 @@ public class TrabajadorController {
         trabajadorService.deleteTrabajador(id);
     }
 }
-

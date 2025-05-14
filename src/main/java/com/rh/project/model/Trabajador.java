@@ -16,6 +16,7 @@ public class Trabajador {
     private String apellidoMaterno;
     private String direccion;
     private String telefono;
+    private String rfc_trabajador;
 
     @OneToOne
     @JoinColumn(name = "id_usuario", unique = true)

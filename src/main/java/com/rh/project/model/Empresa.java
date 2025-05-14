@@ -13,9 +13,9 @@ public class Empresa {
     private Long id_empresa;
 
     private String razon_social;
-    private String rfc;
+    private String rfc_empresa;
     private String direccion;
-    private String giroempresarial;
+    private String giro_empresarial;
     private String regimen_fiscal;
     private String telefono;
 

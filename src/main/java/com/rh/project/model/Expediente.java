@@ -14,7 +14,8 @@ public class Expediente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_expediente;
 
-    private String rfc;
+    private String rfc_empresa;
+    private String rfc_trabajador;
     private String nss;
     private Integer antiguedad;
     private LocalDate fechaRegistro;

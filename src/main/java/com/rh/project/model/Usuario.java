@@ -16,12 +16,13 @@ public class Usuario {
 
     private String nombre;
     private String email;
+    private String password;
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
     public enum Rol{
-        dirctivo, rh , trabajador
+        directivo, rh , trabajador
     }
 
 }
