@@ -2,16 +2,15 @@ package com.rh.project.controller;
 
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import com.rh.project.model.Trabajador;
 import com.rh.project.service.TrabajadorService;
 
-// import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
-// @CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
 @RequestMapping("/trabajadores")
 public class TrabajadorController {

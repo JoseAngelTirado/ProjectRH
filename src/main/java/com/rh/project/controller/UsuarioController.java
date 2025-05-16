@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import com.rh.project.model.Usuario;
 import com.rh.project.service.UsuarioService;
 import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.CrossOrigin;
 
-// @CrossOrigin(origins = "http://localhost:3000")
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {

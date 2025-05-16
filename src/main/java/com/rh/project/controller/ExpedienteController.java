@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import com.rh.project.model.Expediente;
 import com.rh.project.service.ExpedienteService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
 @RequestMapping("/expedientes")
 public class ExpedienteController {
