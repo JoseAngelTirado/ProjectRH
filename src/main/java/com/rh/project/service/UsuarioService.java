@@ -39,9 +39,9 @@ public class UsuarioService {
         return usuarioRepo.save(usuario);
     }
 
-    @Autowired
-    public Usuario getUsuarioByEmail(String email) {
-        return usuarioRepo.findByEmail(email).orElse(null);
-    }
+    // @Autowired
+    // public Usuario getUsuarioByEmail(String email) {
+    //     return usuarioRepo.findByEmail(email).orElse(null);
+    // }
 
 }

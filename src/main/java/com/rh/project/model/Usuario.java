@@ -22,7 +22,7 @@ public class Usuario {
     private Rol rol;
 
     public enum Rol{
-        directivo, rh , trabajador
+        directivo, rh , trabajador, admin
     }
 
 }
