@@ -3,6 +3,7 @@ package com.rh.project.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rh.project.model.Usuario;
@@ -37,4 +38,10 @@ public class UsuarioService {
     public Usuario updateUsuario(Usuario usuario) {
         return usuarioRepo.save(usuario);
     }
+
+    @Autowired
+    public Usuario getUsuarioByEmail(String email) {
+        return usuarioRepo.findByEmail(email).orElse(null);
+    }
+
 }

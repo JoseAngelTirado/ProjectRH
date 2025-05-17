@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import com.rh.project.model.Trabajador;
 import com.rh.project.service.TrabajadorService;
+@CrossOrigin(origins = "http://localhost:5173")
+
 
 @RestController
 @RequestMapping("/trabajadores")
