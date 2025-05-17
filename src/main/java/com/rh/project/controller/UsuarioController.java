@@ -2,7 +2,7 @@ package com.rh.project.controller;
 
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,16 +51,4 @@ public class UsuarioController {
     public void eliminarUsuario(@PathVariable Long id) {
         usuarioService.deleteUsuario(id);
     }
-
-
-    // @GetMapping("/usuarios/email/{email}")
-    // public ResponseEntity<Usuario> getUsuarioByEmail(@PathVariable String email) {
-    //     Usuario usuario = usuarioService.getUsuarioByEmail(email);
-    //     if (usuario != null) {
-    //         return ResponseEntity.ok(usuario);
-    //         } else {
-    //         return ResponseEntity.notFound().build();
-    //        }
-    //     }
-
 }
