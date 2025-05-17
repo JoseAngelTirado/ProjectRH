@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.rh.project.model.Documento;
 import com.rh.project.service.DocumentoService;
+
 @CrossOrigin(origins = "http://localhost:5173")
 
 @RestController

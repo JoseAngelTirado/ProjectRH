@@ -6,9 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.rh.project.model.Trabajador;
 import com.rh.project.service.TrabajadorService;
-@CrossOrigin(origins = "http://localhost:5173")
-
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "http://localhost:5173")
