@@ -21,6 +21,7 @@ public class Expediente {
     private LocalDate fechaRegistro;
 
     @ManyToOne
+    @MapsId
     @JoinColumn(name = "id_trabajador")
     private Trabajador trabajador;
 
