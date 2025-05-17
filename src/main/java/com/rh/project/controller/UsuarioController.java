@@ -17,6 +17,9 @@ import com.rh.project.model.Usuario;
 import com.rh.project.service.UsuarioService;
 @CrossOrigin(origins = "http://localhost:5173")
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins = "http://localhost:5173")
 
 @RestController
 @RequestMapping("/usuarios")

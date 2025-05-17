@@ -17,6 +17,10 @@ import com.rh.project.model.Empresa;
 import com.rh.project.service.EmpresaService;
 @CrossOrigin(origins = "http://localhost:5173")
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
 @RequestMapping("/empresas")
 public class EmpresaController {
