@@ -75,4 +75,13 @@ public class UsuarioService {
         }
     return nuevoUsuario;
     }
+
+    //Metodo para obtener usuarios por empresa solo si el rol es directivo o rh
+    public List<Usuario> obtenerUsuario(Usuario usuarioActual){
+        if(usuarioActual.getRol() == Usuario.Rol.directivo || usuarioActual.getRol() == Usuario.Rol.rh){
+            return usuarioRepo.findAll();
+        }else {
+            return usuarioRepo.findUsuariosByEmpresaId(usuarioActual.getEmpresa().getId_empresa());
+        }
+    }
 }

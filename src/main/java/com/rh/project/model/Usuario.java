@@ -25,4 +25,8 @@ public class Usuario {
         directivo, rh , trabajador, admin
     }
 
+    @ManyToOne
+    @JoinColumn(name = "id_empresa")
+    private Empresa empresa;
+
 }
