@@ -29,4 +29,6 @@ public class Usuario {
     @JoinColumn(name = "id_empresa")
     private Empresa empresa;
 
+    @Version
+    private Integer version;
 }

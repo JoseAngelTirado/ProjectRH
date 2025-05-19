@@ -46,8 +46,18 @@ public class UsuarioService {
         usuarioRepo.deleteById(id);
     }
 
-    public Usuario updateUsuario(Usuario usuario) {
-        return usuarioRepo.save(usuario);
+    @Transactional
+    public Usuario updateUsuario(Long id, Usuario usuarioRequest) {
+        Usuario usuarioExistente = usuarioRepo.findById(id)
+            .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        usuarioExistente.setNombre(usuarioRequest.getNombre());
+        usuarioExistente.setEmail(usuarioRequest.getEmail());
+        usuarioExistente.setPassword(usuarioRequest.getPassword());
+        usuarioExistente.setRol(usuarioRequest.getRol());
+        // puedes actualizar otros campos aquí según necesites
+
+        return usuarioRepo.save(usuarioExistente);
     }
 
     @Transactional
