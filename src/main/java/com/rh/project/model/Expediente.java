@@ -1,6 +1,7 @@
 package com.rh.project.model;
 
 import java.time.LocalDate;
+import java.math.BigDecimal;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class Expediente {
     private String nss;
     private Integer antiguedad;
     private LocalDate fechaRegistro;
+    private BigDecimal sueldo;
 
     @ManyToOne
     @MapsId
