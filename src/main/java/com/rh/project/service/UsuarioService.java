@@ -14,8 +14,6 @@ import com.rh.project.repository.ExpedienteRepo;
 import com.rh.project.repository.TrabajadorRepo;
 import com.rh.project.repository.UsuarioRepo;
 
-
-
 @Service
 public class UsuarioService {
 
@@ -83,12 +81,13 @@ public class UsuarioService {
             expediente.setId_expediente(nuevoUsuario.getId_usuario());
             expedienteRepo.save(expediente);
         }
+        
     return nuevoUsuario;
     }
 
-    //Metodo para obtener usuarios por empresa solo si el rol es directivo o rh
+    //Metodo para obtener usuarios por empresa solo si el rol es director o rh
     public List<Usuario> obtenerUsuario(Usuario usuarioActual){
-        if(usuarioActual.getRol() == Usuario.Rol.directivo || usuarioActual.getRol() == Usuario.Rol.rh){
+        if(usuarioActual.getRol() == Usuario.Rol.director || usuarioActual.getRol() == Usuario.Rol.rh){
             return usuarioRepo.findAll();
         }else {
             return usuarioRepo.findUsuariosByEmpresaId(usuarioActual.getEmpresa().getId_empresa());
