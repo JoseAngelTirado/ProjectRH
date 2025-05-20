@@ -11,7 +11,7 @@ import com.rh.project.model.Usuario;
 import com.rh.project.repository.UsuarioRepo;
 import com.rh.project.service.TrabajadorService;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:5173")
 
 @RestController
 @RequestMapping("/trabajadores")
