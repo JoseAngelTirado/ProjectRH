@@ -2,7 +2,6 @@ package com.rh.project.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 @Entity
 @Table(name = "trabajador")
 @Data
@@ -19,7 +18,6 @@ public class Trabajador {
     private String rfc_trabajador;
 
     @OneToOne
-    @MapsId
     @JoinColumn(name = "id_usuario", unique = true)
     private Usuario usuario;
 }

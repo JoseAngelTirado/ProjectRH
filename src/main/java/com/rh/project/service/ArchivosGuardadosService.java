@@ -28,9 +28,10 @@ public class ArchivosGuardadosService {
         }
     }
 
-    // Método para guardar un archivo
-    public String guardarArchivo(MultipartFile archivo) {
-        String nombreArchivo = Path.of(archivo.getOriginalFilename()).getFileName().toString();
+    public String guardarArchivo(MultipartFile archivo, String prefijo) {
+        String extension = obtenerExtension(archivo.getOriginalFilename());
+        String nombreArchivo = (prefijo != null ? prefijo + "_" : "") +
+                System.currentTimeMillis() + "." + extension;
         try {
             if (nombreArchivo.contains("..")) {
                 throw new RuntimeException("Nombre de archivo inválido: " + nombreArchivo);
@@ -40,6 +41,14 @@ public class ArchivosGuardadosService {
             return nombreArchivo;
         } catch (IOException ex) {
             throw new RuntimeException("No se pudo guardar el archivo: " + nombreArchivo, ex);
+        }
+    }
+
+    private String obtenerExtension(String nombreArchivo) {
+        try {
+            return nombreArchivo.substring(nombreArchivo.lastIndexOf(".") + 1);
+        } catch (Exception e) {
+            return "";
         }
     }
 
